@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>spring-client-datetime-mssql</title>
+	</head>
+	<body>
+		<h1>spring-client-datetime-mssql</h1>
+
+		<form id="datetime-form">
+			<button type="submit">Send browser's date-time</button>
+			<button type="reset">Clear</button>
+		</form>
+		<div id="datetime-div" style="display: none">
+			Output:
+			<dl>
+				<dt>date:</dt>
+				<dd class="date"></dd>
+				<dt>time:</dt>
+				<dd class="time"></dd>
+				<dt>timezoneOffset:</dt>
+				<dd class="timezone-offset"></dd>
+			</dl>
+			<pre></pre>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>
