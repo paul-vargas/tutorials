@@ -17,11 +17,10 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration
 @EnableWebMvc
@@ -50,6 +49,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		viewResolver.setSuffix(".jsp");
 		registry.viewResolver(viewResolver);
 	}*/
+	
+	@Override
+	public void configureViewResolvers(ViewResolverRegistry registry) {
+		TilesViewResolver viewResolver = new TilesViewResolver();
+		registry.viewResolver(viewResolver);
+	}
 
 	@Override
 	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
@@ -60,13 +65,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
 				stringHttpMessageConverter.setDefaultCharset(StandardCharsets.UTF_8);
 			}
 		}
-	}
-	
-	@Bean
-	UrlBasedViewResolver tilesViewResolver() {
-		UrlBasedViewResolver tilesViewResolver = new UrlBasedViewResolver();
-		tilesViewResolver.setViewClass(TilesView.class);
-		return tilesViewResolver;
 	}
 	
 	@Bean
