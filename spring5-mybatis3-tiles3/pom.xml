@@ -7,43 +7,46 @@
 	<version>0.0.1</version>
 	<packaging>war</packaging>
 	<dependencies>
+
+		<dependency>
+		  <groupId>org.slf4j</groupId>
+		  <artifactId>slf4j-api</artifactId>
+		  <version>[2.0.0-alpha0,)</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>[1.3.0-alpha4,)</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-to-slf4j</artifactId>
+			<version>[2.12.0,)</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-catalina</artifactId>
-			<version>[9.0.0,10.0.0)</version>
+			<version>[9.0.21,10.0.0)</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>[5.1.0.RELEASE,)</version>
+			<version>[5.1.8.RELEASE,)</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>[2.11.1,)</version>
-		</dependency>
-		<dependency>
-		  <groupId>org.apache.logging.log4j</groupId>
-		  <artifactId>log4j-slf4j-impl</artifactId>
-		  <version>[2.11.1,)</version>
-		</dependency>		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
 		<dependency>
-		  <groupId>org.apache.tiles</groupId>
-		  <artifactId>tiles-request-jsp</artifactId>
-		  <version>1.0.7</version>
-		  <exclusions>
-		  	<exclusion>
-		  		<groupId>org.slf4j</groupId>
-		  		<artifactId>slf4j-api</artifactId>
-		  	</exclusion>
-		  </exclusions>
-		</dependency>		
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-request-jsp</artifactId>
+			<version>[1.0.7,)</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-request-api</artifactId>
@@ -52,26 +55,20 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-		  <groupId>org.apache.tiles</groupId>
-		  <artifactId>tiles-request-servlet</artifactId>
-		  <version>[1.0.7,)</version>
-		</dependency>		
-		<dependency>
-		  <groupId>org.apache.tiles</groupId>
-		  <artifactId>tiles-core</artifactId>
-		  <version>[3.0.8,)</version>
-		  <exclusions>
-		  	<exclusion>
-		  		<groupId>org.slf4j</groupId>
-		  		<artifactId>slf4j-api</artifactId>
-		  	</exclusion>
-		  </exclusions>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-request-servlet</artifactId>
+			<version>[1.0.7,)</version>
 		</dependency>
-	<dependency>
-	  <groupId>org.apache.tiles</groupId>
-	  <artifactId>tiles-jsp</artifactId>
-	  <version>3.0.8</version>
-	</dependency>		
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>[3.0.8,)</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>[3.0.8,)</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>spring5-mybatis3-tiles3</finalName>

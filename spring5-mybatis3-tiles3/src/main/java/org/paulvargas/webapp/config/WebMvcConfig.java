@@ -69,6 +69,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	
 	@Bean
 	TilesConfigurer tilesConfigurer() {
+		// https://www.programcreek.com/java-api-examples/?code=jegbjerg/webapp-base/webapp-base-master/src/main/java/dk/freecode/config/DispatcherConfig.java#
 		TilesConfigurer tilesConfigurer = new TilesConfigurer();
 		tilesConfigurer.setDefinitions("/WEB-INF/layouts/layouts.xml", "/WEB-INF/views/**/views.xml");
 		tilesConfigurer.setCheckRefresh(true);

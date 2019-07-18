@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<charset>ISO-8859-1</charset>
+			<pattern>%date{ISO8601} ${COMPUTERNAME} ${USERNAME} %pid %level \(%C{0}.java:%L\) %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="ALL">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
