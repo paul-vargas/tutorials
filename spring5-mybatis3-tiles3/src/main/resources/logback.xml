@@ -4,7 +4,7 @@
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<charset>ISO-8859-1</charset>
-			<pattern>%date{ISO8601} ${COMPUTERNAME} ${USERNAME} %pid %level \(%C{0}.java:%L\) %msg%n</pattern>
+			<pattern>%date{ISO8601} %level %C.%M\(%C{0}.java:%L\) %msg%n</pattern>
 		</encoder>
 	</appender>
 

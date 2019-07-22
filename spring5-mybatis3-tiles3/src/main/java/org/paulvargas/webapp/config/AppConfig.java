@@ -7,16 +7,19 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import com.zaxxer.hikari.HikariDataSource;
 
+@Configuration
 public class AppConfig {
+	
 	@Bean(name = "firstDataSource")
 	@ConfigurationProperties(prefix = "datasources.first")
 	public DataSource dataSourceOne() {
 		return new HikariDataSource();
 	}
-	
+
 	@Bean(name = "firstSqlSessionFactory")
 	public SqlSessionFactory firstSqlSessionFactory(@Qualifier("firstDataSource") final DataSource dataSource)
 			throws Exception {
@@ -25,5 +28,6 @@ public class AppConfig {
 		final SqlSessionFactory factory = factoryBean.getObject();
 		factory.getConfiguration().setMapUnderscoreToCamelCase(true);
 		return factory;
-	}	
+	}
+
 }
